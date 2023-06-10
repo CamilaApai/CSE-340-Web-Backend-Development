@@ -15,5 +15,9 @@ node_modules
 # .DS_Store is only for Mac users
 **/.DS_Store
 
-# README.md will not be visible.
+# README.md will be ignore.
 README.md
+
+# package-lock.json will be ignore. 
+# I believe this is supposed to be pnpm-lock.yaml
+package-lock.json
