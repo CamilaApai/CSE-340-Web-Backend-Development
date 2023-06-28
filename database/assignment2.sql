@@ -17,14 +17,16 @@ UPDATE inventory
 SET inv_description = replace(inv_description, 'small interiors', 'a huge interior')
 WHERE inv_make = 'GM' AND inv_model = 'Hummer';
 
--- Use an inner join to select the invModel field from the inventory table and the classificationName field from the carclassification table for inventory items that belong to the "SUV" category.
+-- Use an inner join to select the make and model fields from the inventory table and the classification name field from the classification table for inventory items that belong to the "Sport" category.
 SELECT inventory.inv_model, inventory.inv_make, classification.classification_name
 FROM inventory
 INNER JOIN classification ON inventory.classification_id = classification.classification_id
 WHERE classification.classification_name = 'Sport';
 
--- Update all records in the Inventory table to add "/vehicles" to the middle of the file path in the inv_image and inv_thumbnail columns using a single query.
+-- Update all records in the inventory table to add "/vehicles" to the middle of the file path in the inv_image and inv_thumbnail columns using a single query. 
 UPDATE inventory
-SET inv_image = REPLACE(inv_image, '/images/', 'images/vehicles/' ), 
-    inv_thumbnail = REPLACE(inv_thumbnail, '/images/', 'images/vehicles/');
+SET inv_image = REPLACE(inv_image, '/images/', '/images/vehicles/' ), 
+    inv_thumbnail = REPLACE(inv_thumbnail, 'images/', '/images/vehicles/');
+
+
 

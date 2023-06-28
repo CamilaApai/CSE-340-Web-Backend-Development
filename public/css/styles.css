@@ -51,7 +51,7 @@ footer,
 
 a:not(.upgrade + a) {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 /*|| HEADER ||*/
@@ -73,20 +73,19 @@ a:not(.upgrade + a) {
 /*|| NAVIGATION ||*/
 nav {
   background-color: dimgray;
-}
-
-.navigation {
-  display: flex;
-  justify-content: space-around;
   padding: 0;
 }
 
-.navigation li {
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav li {
   list-style: none;
 }
 
-.navigation li a {
-  color: white;
+nav a {
   display: block;
   padding: 1em;
 }
