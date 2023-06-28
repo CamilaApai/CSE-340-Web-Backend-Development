@@ -212,9 +212,8 @@ div.reviews ul li {
 #inv-display {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 #inv-display li {
