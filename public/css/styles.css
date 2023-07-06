@@ -49,9 +49,9 @@ footer,
   font-size: var(--paragraph-size);
 }
 
-a:not(.upgrade + a) {
+a:not(.upgrade + a, nav a) {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 /*|| HEADER ||*/
@@ -88,6 +88,8 @@ nav li {
 nav a {
   display: block;
   padding: 1em;
+  color: white;
+  text-decoration: none;
 }
 
 /*|| Home View ||*/
@@ -207,22 +209,23 @@ div.reviews ul li {
   padding: var(--base-padding);
 }
 
-/*|| Model Views ||*/
+/*|| Inventory Views by Model  ||*/
 
 #inv-display {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
   justify-content: space-evenly;
+  align-items: stretch;
 }
 
 #inv-display li {
   list-style: none;
+  border: 1px solid grey ;
+  border-radius: 5%;
 }
 
 #inv-display img {
-  padding: var(--base-padding);
-  border-radius: 10%;
+  border-radius: 5%;
 }
 
 .namePrice, 
@@ -235,6 +238,7 @@ div.reviews ul li {
   text-decoration:underline;
   font-size: var(--paragraph-size);
 }
+
 
 /*|| FOOTER ||*/
 
