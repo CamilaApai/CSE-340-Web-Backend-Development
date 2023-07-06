@@ -17,7 +17,7 @@ router.get("/register", utilities.handleErrors(accountController.buildRegister))
 // Week 5, Individual Activity done in Group
 //router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildManagement))
 
-// Process the login request
+////Process the login request
 //router.post(
 //  "/login",
 //  regValidate.loginRules(),
@@ -32,6 +32,6 @@ router.get("/register", utilities.handleErrors(accountController.buildRegister))
 //    regValidate.checkRegData,
 //    utilities.handleErrors(accountController.registerAccount)
 //  )
-
+//
 module.exports = router
   
