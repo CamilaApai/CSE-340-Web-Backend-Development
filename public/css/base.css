@@ -131,6 +131,7 @@ div.delorean button {
   padding: var(--base-padding);
   grid-row: 3;
   width: 15%;
+  min-width: 150px;
 }
 
 div.upgrades {
