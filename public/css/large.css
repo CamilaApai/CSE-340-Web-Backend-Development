@@ -55,11 +55,7 @@
 
 /*|| Inventory Views by Model  ||*/
 
-#inv-display {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  align-items: center;
-}
+
 
 /*|| Inventory Detail Views ||*/
 
