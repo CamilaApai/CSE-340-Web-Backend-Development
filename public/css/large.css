@@ -1,0 +1,72 @@
+/* Large Device CSS */
+
+@media only screen {
+  body {
+    background-image: url("/images/site/checkerboard.jpg");
+    background-size: 20em 20em;
+    padding: var(--base-padding);
+  }
+
+  #wrapper {
+    background-color: white;
+    padding: var(--base-padding);
+    border: 5px solid var(--accent-color);
+  }
+
+  h1,
+  .siteName {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  p,
+  nav,
+  main,
+  footer,
+  #tools {
+    font-size: 18px;
+  }
+
+  /* || MAIN ||*/
+
+  div.reviewsandupdates {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 0fr);
+  }
+
+  div.delorean,
+  div.deloreancomplete img {
+    grid-column: 1/2;
+  }
+
+  div.upgrades {
+    grid-column: 1/2;
+    grid-row: 3;
+    text-align: center;
+  }
+
+  div.reviews {
+    grid-column: 2/3;
+  }
+}
+
+/*|| Inventory Detail Views  ||*/
+
+.detailPage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1em;
+  align-items: stretch;
+}
+
+.detailImage {
+  grid-column: 1;
+}
+
+.detailInfo {
+  grid-column: 2;
+}
+

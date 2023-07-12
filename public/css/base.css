@@ -49,7 +49,7 @@ footer,
   font-size: var(--paragraph-size);
 }
 
-a:not(.upgrade + a, nav a) {
+a:not(.upgrade + a, nav a, footer a) {
   text-decoration: none;
   color: black;
 }
@@ -108,7 +108,7 @@ div.deloreancomplete {
   font-weight: bold;
 }
 
-div.delorean{
+div.delorean {
   opacity: 0.5;
 }
 
@@ -157,7 +157,7 @@ div.upgrade img {
   align-self: center;
 }
 
-div.upgrade + a {
+div.upgrade+a {
   text-align: center;
 }
 
@@ -171,12 +171,12 @@ div.two {
   grid-row: 2;
 }
 
-div.one + a {
+div.one+a {
   grid-column: 1;
   grid-row: 3;
 }
 
-div.two + a {
+div.two+a {
   grid-column: 2;
   grid-row: 3;
 }
@@ -191,12 +191,12 @@ div.four {
   grid-row: 4;
 }
 
-div.three + a {
+div.three+a {
   grid-column: 1;
   grid-row: 5;
 }
 
-div.four + a {
+div.four+a {
   grid-column: 2;
   grid-row: 5;
 }
@@ -214,42 +214,34 @@ div.reviews ul li {
 #inv-display {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: stretch;
+  gap: 10px;
 }
 
 #inv-display li {
   list-style: none;
-  border: 1px solid grey ;
+  border: 1px solid grey;
   border-radius: 5%;
 }
 
 #inv-display img {
   border-radius: 5%;
+  width: 100%;
 }
 
-.namePrice, 
+.namePrice,
 .namePrice h2 {
   text-align: center;
 }
 
 .namePrice h2 a {
   color: darkblue;
-  text-decoration:underline;
+  text-decoration: underline;
   font-size: var(--paragraph-size);
 }
 
-
-/*|| FOOTER ||*/
-
-footer {
-  text-align: left;
-}
-
-footer p {
-  margin: 0;
-}
-
+/*|| Inventory Detail Views  ||*/
 /* Large Device CSS */
 
 @media only screen and (min-width: 40em) {
@@ -273,7 +265,7 @@ footer p {
   h2 {
     font-size: 25px;
   }
-  
+
   p,
   nav,
   main,
@@ -303,4 +295,20 @@ footer p {
   div.reviews {
     grid-column: 2/3;
   }
+}
+
+/*|| Inventory Detail Views  ||*/
+.detailImage img {
+  width: 100%;
+}
+
+/*|| FOOTER ||*/
+
+footer {
+  text-align: left;
+}
+
+footer p {
+  margin: 0;
+  padding: 5px 0;
 }
