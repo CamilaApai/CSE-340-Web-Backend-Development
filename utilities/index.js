@@ -62,6 +62,32 @@ Util.buildClassificationGrid = async function(data){
 }
 
 
+/* **************************************
+* Build the inventory view HTML
+* ************************************ */
+Util.buildInventoryDetail = async function(data){
+  let detail = "";
+  if(data.length > 0){
+    data.forEach(vehicle => { 
+      detail +=  '<a href="../../inv/detail/'+ vehicle.inv_id 
+      + '" title="View ' + vehicle.inv_make + ' '+ vehicle.inv_model 
+      + 'details"><img src="' + vehicle.inv_image
+      +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
+      +' on CSE Motors"></a>'
+      detail += '<div class="detailInfo">'
+      detail += '<p>' + '<b>' + vehicle.inv_make + ' ' + vehicle.inv_model + ' Details ' + '</b>' + '</p>'
+      detail += '<p>' + '<b>' + 'Price: $' + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</b>' + '</p>'
+      detail += '<p>' + '<b>' + 'Description:' + ' </b>' + vehicle.inv_description + '</p>'
+      detail += '<p>' + '<b>' + 'Color:' + ' </b>' + vehicle.inv_color + '</p>'
+      detail += '<p>' + '<b>' + 'Miles:' + ' </b>' + new Intl.NumberFormat('en-US').format(vehicle.inv_miles) + '</p>'
+      detail += '</div>'
+    })
+  } else { 
+    detail += '<p class="notice">Sorry, the vehicles detail view is not available.</p>'
+  }
+  return detail
+}
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 
