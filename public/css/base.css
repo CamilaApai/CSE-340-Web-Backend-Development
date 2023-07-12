@@ -74,6 +74,7 @@ a:not(.upgrade + a, nav a, footer a) {
 nav {
   background-color: dimgray;
   padding: 0;
+  margin: 0;
 }
 
 nav ul {
@@ -87,9 +88,9 @@ nav li {
 
 nav a {
   display: block;
-  padding: 1em;
   color: white;
   text-decoration: none;
+  padding: 10px 0;
 }
 
 /*|| Home View ||*/
@@ -221,9 +222,11 @@ div.reviews ul li {
 }
 
 #inv-display li {
+  margin: var(--base-margin);
   list-style: none;
   border: 1px solid grey;
   border-radius: 5%;
+  align-self: stretch;
 }
 
 #inv-display img {
@@ -242,74 +245,14 @@ div.reviews ul li {
   font-size: var(--paragraph-size);
 }
 
-/*|| Inventory Detail Views  ||*/
-/* Large Device CSS */
-
-@media only screen and (min-width: 40em) {
-  body {
-    background-image: url("/images/site/checkerboard.jpg");
-    background-size: 20em 20em;
-    padding: var(--base-padding);
-  }
-
-  #wrapper {
-    background-color: white;
-    padding: var(--base-padding);
-    border: 5px solid var(--accent-color);
-  }
-
-  h1,
-  .siteName {
-    font-size: 30px;
-  }
-
-  h2 {
-    font-size: 25px;
-  }
-
-  p,
-  nav,
-  main,
-  footer,
-  #tools {
-    font-size: 18px;
-  }
-
-  /* || MAIN ||*/
-
-  div.reviewsandupdates {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 0fr);
-  }
-
-  div.delorean,
-  div.deloreancomplete img {
-    grid-column: 1/2;
-  }
-
-  div.upgrades {
-    grid-column: 1/2;
-    grid-row: 3;
-    text-align: center;
-  }
-
-  div.reviews {
-    grid-column: 2/3;
-  }
-}
 
 /*|| Inventory Detail Views  ||*/
+
 .detailImage img {
   width: 100%;
 }
 
-/*|| FOOTER ||*/
 
-footer {
-  text-align: left;
-}
 
-footer p {
-  margin: 0;
-  padding: 5px 0;
-}
+
+
