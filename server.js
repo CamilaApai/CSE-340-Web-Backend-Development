@@ -15,8 +15,12 @@ const utilities = require("./utilities/")
 const session = require("express-session")
 const pool = require('./database/')
 const bodyParser = require("body-parser")
+const errorRoute = require('./routes/errorRoute');
 //Unit 5
 const cookieParser = require("cookie-parser")
+
+
+
 
 const app = express()
 
@@ -48,6 +52,7 @@ app.use(function(req, res, next){
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
+
 /* ***********************
  * View Engine and Templates
  *************************/
@@ -65,6 +70,9 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 
 // Inventory routes
 app.use("/inv", inventoryRoute)
+
+// Error routes -- week 3, Individual Activity
+app.use('/error', errorRoute);
 
 // Account routes - Week 4, Learning Activity
 app.use("/account", require("./routes/accountRoute"))
