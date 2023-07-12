@@ -45,11 +45,12 @@ p,
 nav,
 main,
 footer,
+.submit, 
 #tools {
   font-size: var(--paragraph-size);
 }
 
-a:not(.upgrade + a, nav a, footer a) {
+a:not(.upgrade + a, nav a, footer a, fieldset + p a) {
   text-decoration: none;
   color: black;
 }
@@ -250,6 +251,35 @@ div.reviews ul li {
 
 .detailImage img {
   width: 100%;
+}
+
+
+/*|| Registration and Login View ||*/
+form {
+  display: flex;
+  flex-direction: column;
+  padding: var(--base-padding);
+  margin: var(--base-margin);
+  background-color: #58a5e9;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 50%;
+  justify-content: center;
+}
+
+form div {
+  padding: 10px 0;
+}
+
+form label,
+form input {
+  padding: 15px 5px 5px 0px;
+}
+
+.submit {
+  padding: var(--base-padding);
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 

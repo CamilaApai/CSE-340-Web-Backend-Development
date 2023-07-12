@@ -10,19 +10,8 @@ const bcrypt = require("bcryptjs")
 
 
 /* ****************************************
-*  Deliver login view
-* *************************************** */
-async function buildLogin(req, res, next) {
-    let nav = await utilities.getNav()
-    res.render("account/login", {
-      title: "Login",
-      nav,
-    })
-  }
-  
-
-/* ****************************************
 *  Deliver registration view
+   Unit 4, server-side activity
 * *************************************** */
 async function buildRegister(req, res, next) {
   let nav = await utilities.getNav()
@@ -33,13 +22,28 @@ async function buildRegister(req, res, next) {
   })
 }
 
+
+/* ******************************************
+ * Deliver login view
+ * Unit 4, server-side activity
+ *******************************************/
+async function buildLogin(req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("account/login", {
+    title: "Login",
+    nav,
+    errors: null,
+  })
+}
+
+
 /* ****************************************
 *  Process Registration
+   Unit 4, server-side activity
 * *************************************** */
 async function registerAccount(req, res) {
     let nav = await utilities.getNav()
     const { account_firstname, account_lastname, account_email, account_password } = req.body
-  
     const regResult = await accountModel.registerAccount(
       account_firstname,
       account_lastname,
@@ -66,7 +70,8 @@ async function registerAccount(req, res) {
   }
 
 /* ****************************************
- *  Process login request
+ *  Process  Login
+    Unit 4, server-side activity
  * ************************************ */
 async function accountLogin(req, res) {
   let nav = await utilities.getNav()

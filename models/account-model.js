@@ -13,7 +13,8 @@ async function registerAccount(account_firstname, account_lastname, account_emai
   }
   
 /* **********************
- *   Check for existing email
+ *  Check for existing email
+    Week 4, Stickiness and Email Check Activity
 // * ********************* */
 async function checkExistingEmail(account_email){
   try {
@@ -39,5 +40,6 @@ async function getAccountByEmail (account_email) {
     return new Error("No matching email found")
   }
 }
+
 
 module.exports = {registerAccount, checkExistingEmail, getAccountByEmail}

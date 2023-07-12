@@ -10,11 +10,20 @@
 <!-- Display Messages -->
 <%# message %>
 
+<!-- Display Error Message -->
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
 <form id="loginForm" action="/account/login" method="post">
   <fieldset>
     <div>
       <label for="account_email">Email Adress:</label>
-      <input type="email" name="account_email" id="account_email" required>
+      <input type="text" name="account_email" id="accountemail" required value="<%= locals.account_email %>">
     </div>
     <div>
       <label for="account_password">Password</label> 
@@ -22,8 +31,8 @@
     </div>
       <span>Passwords must be at least 12 characters and contain at least 1 number, 1 capital letter and 1 special character</span> 
     <div>
-      <input type="submit" class="submit" name="submit" id="submit" value="LOGIN">
+      <input type="submit" class="submit" name="submit" id="submit" value="Login">
     </div>
   </fieldset>
+  <p>No account? <a href="/account/register">Sign-up</a></p>
 </form>
-<p>No account?<a href="/account/register">Sign-up</a></p>

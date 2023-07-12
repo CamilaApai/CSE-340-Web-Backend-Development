@@ -18,20 +18,20 @@
 <% } %>
 
 <form action="/account/register" method="post">
-  <div>
-    <p>All fields are required</p>
+  <div class="form">
+    <p>All FIELDS ARE REQUIRED.</p>
     <fieldset>
       <div>
         <label for="account_firstname">First Name:</label>
-        <input type="text" name="account_firstname" id="account_firstname" required >
+        <input type="text" name="account_firstname" id="accountFirstname" required value="<%= locals.account_firstname %>">
       </div>
       <div>
         <label for="account_lastname">Last Name:</label>
-        <input type="text" name="account_lastname" id="account_lastname" required>
+        <input type="text" name="account_lastname" id="accountlastname" required value="<%= locals.account_lastname %>">
       </div>
       <div>
         <label for="account_email">Email Address</label>
-        <input type="email" name="account_email" id="account_email" required>
+        <input type="text" name="account_email" id="accountemail" required value="<%= locals.account_email %>">
       </div>
       <div>
         <label for="account_password">Password:</label> 
@@ -39,10 +39,10 @@
       </div>
       <span>Passwords must be at least 12 characters and contain at least 1 number, 1 capital letter and 1 special character</span> 
       <div>
-        <input type="submit" class="submit" name="submit" id="submit" value="Registration">
+        <input type="submit" class="submit" name="submit" id="submit" value="Register">
         <input type="hidden" name="action" value="register">
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  </div>
 </form>
 
