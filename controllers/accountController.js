@@ -3,10 +3,9 @@
  *************************/
 const accountModel = require("../models/account-model");
 const utilities = require('../utilities')
-// Week 5
 const bcrypt = require("bcryptjs")
-//const jwt = require("jsonwebtoken")
-//require("dotenv").config()
+const jwt = require("jsonwebtoken")
+require("dotenv").config()
 
 
 
@@ -37,6 +36,18 @@ async function buildLogin(req, res, next) {
   })
 }
 
+/* ******************************************
+ * Deliver Account Management view
+ * Unit 5, login: JWT and Cookie
+ *******************************************/
+async function buildAccountManagement(req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("account/accountManagement", {
+    title: "Account Management",
+    nav,
+    errors: null,
+  })
+}
 
 /* ****************************************
 *  Process Registration
@@ -87,8 +98,8 @@ async function registerAccount(req, res) {
   }
 
 /* ****************************************
- *  Process  Login
-    Unit 4, server-side activity
+ *  Process Login request
+    Unit 5, Login Process activity
  * ************************************ */
 async function accountLogin(req, res) {
   let nav = await utilities.getNav()
@@ -116,4 +127,5 @@ async function accountLogin(req, res) {
   }
  }
 
-module.exports = { buildLogin, buildRegister, registerAccount, accountLogin }
+
+module.exports = { buildLogin, buildRegister, registerAccount, accountLogin, buildAccountManagement }

@@ -28,7 +28,7 @@ async function checkExistingEmail(account_email){
 
 /* *****************************
 * Return account data using email address
-* Unit 5
+* Unit 5, Login: JWT and Cookie
 * ***************************** */
 async function getAccountByEmail (account_email) {
   try {

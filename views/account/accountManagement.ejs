@@ -1,0 +1,22 @@
+<!-- Week 5, Learning Activity -->
+
+<!-- Display the Content Heading -->
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+<!-- Display Messages -->
+<% message %>
+
+<!-- Display Error Message -->
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
+<p>You're logged in!</p>

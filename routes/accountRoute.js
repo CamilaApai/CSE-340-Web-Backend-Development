@@ -11,19 +11,6 @@ router.get("/login", utilities.handleErrors(accountController.buildLogin))
 // Deliver register View
 router.get("/register", utilities.handleErrors(accountController.buildRegister));
 
-// Deliver Account Management View
-// Week 5, Individual Activity done in Group
-//router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildManagement))
-
-// Process the login attempt
-//router.post(
-//    "/login",
-//    (req, res) => {
-//      res.status(200).send('login process')
-//    }
-//  )
-
-
 // Process the registration data, Unit 4 server-side activity
 router.post(
   "/register",
@@ -32,7 +19,11 @@ router.post(
   utilities.handleErrors(accountController.registerAccount)
 )
 
-//Process the login request, Unit 4 server-side activity
+/* **********************
+ *  Process the login request 
+    Unit 4, server-side activity
+    Modified in Unit 5, Login Process Activity
+// * ********************* */
 router.post(
   "/login",
   regValidate.loginRules(),
@@ -40,7 +31,9 @@ router.post(
   utilities.handleErrors(accountController.accountLogin)
 )
 
-//router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildAccountManagement))
+// Deliver Account Management View
+// Week 5, Individual Activity done in Group
+router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildAccountManagement))
 
 module.exports = router
   
