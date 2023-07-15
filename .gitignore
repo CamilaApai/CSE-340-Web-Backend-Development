@@ -21,3 +21,26 @@ README.md
 # package-lock.json will be ignore. 
 # I believe this is supposed to be pnpm-lock.yaml
 package-lock.json
+
+##################################################################
+# Data of accounts register on the Registration View. 
+# This information is important to be able to Login in the Login View.
+
+#Account 1:
+#account_firstname: Basic
+#account_lastname: Client
+#account_email: basic@340.edu
+#account_password: I@mABas1cCl!3nt
+
+#Account 2:
+#account_firstname: Happy
+#account_lastname: Employee
+#account_email: happy@340.edu
+#account_password: I@mAnEmpl0y33
+
+#Account 3:
+#account_firstname: Manager
+#account_lastname: User
+#account_email: manager@340.edu
+#account_password: I@mAnAdm!n1strat0r
+##################################################################

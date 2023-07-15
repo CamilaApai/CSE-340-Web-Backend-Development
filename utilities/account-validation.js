@@ -34,7 +34,6 @@ validate.registrationRules = () => {
         }
       }),
 
-  
       // password is required and must be strong password
       body("account_password")
         .trim()

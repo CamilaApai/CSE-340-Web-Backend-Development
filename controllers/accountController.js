@@ -65,7 +65,7 @@ async function registerAccount(req, res) {
     } catch (error) {
       req.flash("notice", 'Sorry, there was an error processing the registration.')
       res.status(500).render("account/register", {
-        title: "Regis tration",
+        title: "Registration",
         nav,
         errors: null,
       })

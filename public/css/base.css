@@ -50,7 +50,7 @@ footer,
   font-size: var(--paragraph-size);
 }
 
-a:not(.upgrade + a, nav a, footer a, fieldset + p a) {
+.nounderline {
   text-decoration: none;
   color: black;
 }

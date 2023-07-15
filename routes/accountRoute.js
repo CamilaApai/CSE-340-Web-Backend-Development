@@ -6,7 +6,7 @@ const utilities = require("../utilities")
 const regValidate = require('../utilities/account-validation')
 
 // Deliver Login View
-router.get("/login", utilities.handleErrors(accountController.buildLogin))
+router.get("/login", utilities.handleErrors(accountController.buildLogin));
 
 // Deliver register View
 router.get("/register", utilities.handleErrors(accountController.buildRegister));
@@ -33,7 +33,7 @@ router.post(
 
 // Deliver Account Management View
 // Week 5, Individual Activity done in Group
-router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildAccountManagement))
+router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildAccountManagement));
 
 module.exports = router
   

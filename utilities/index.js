@@ -91,9 +91,25 @@ Util.buildInventoryDetail = async function(data){
   return detail
 }
 
+
+/* ************************
+ * Options for the Add Inventory Form
+ * Unit 4, Individual Activity
+ ************************** */
+Util.buildClassificationOptions = async function (optionSelected) {
+  let data = await invModel.getClassifications()
+  let options = '<select name="classification_id" id="classification_id" required>'
+  options += "<option value = ''>Choose a Classification</option>"
+  data.rows.forEach((row) => {
+    options += `<option value ="${row.classification_id}" ${row.classification_id === Number(optionSelected) ? 'selected' : ''}>${row.classification_name}</option>`
+  })
+  options += "</select>"
+  return options
+}
+
 /* ****************************************
  *  Check Login
- *  Unit 5
+ *  Unit 5, JWT Authorization Activity
  * ************************************ */
 Util.checkLogin = (req, res, next) => {
   if (res.locals.loggedin) {
@@ -111,6 +127,7 @@ Util.checkLogin = (req, res, next) => {
  * General Error Handling
  **************************************** */
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
+
 
 /* ****************************************
 * Middleware to check token validity

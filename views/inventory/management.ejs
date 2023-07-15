@@ -1,0 +1,18 @@
+<!-- Week 4, Individual Activity -->
+
+<!-- Content Heading -->
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+<!-- Flash Message -->
+
+<%- messages() %>
+
+<!-- Display the Content Body -->
+<p><a href="/inv/add-classification">Add New Classification</a></p>
+<p><a href="/inv/add-inventory">Add New Vehicle</a></p>
+
+<!-- To access to this view use the following route: localhost:5500/inv/ -->
