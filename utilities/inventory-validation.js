@@ -12,6 +12,7 @@ const validate = {}
           // classification name is required and must be string
           body("classification_name")
           .trim()
+          .isAlpha()
           //.isStrongPassword({
           //  minLength: 1,
           //  minNumbers: 0,
