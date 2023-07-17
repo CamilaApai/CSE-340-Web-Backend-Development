@@ -254,7 +254,7 @@ div.reviews ul li {
 }
 
 
-/*|| Registration and Login View ||*/
+/*|| Forms (Registration, Login, Add Classification & Add Vehicle ||*/
 form {
   display: flex;
   flex-direction: column;
@@ -279,10 +279,14 @@ form input {
 .submit {
   padding: var(--base-padding);
   font-weight: bold;
-  margin: 10px 0;
 }
 
-
+input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: var(--base-padding);
+}
 
 
 
