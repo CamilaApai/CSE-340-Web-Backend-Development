@@ -96,7 +96,7 @@ Util.buildInventoryDetail = async function(data){
  * Options for the Add Inventory Form
  * Unit 4, Individual Activity
  ************************** */
-Util.buildClassificationOptions = async function (optionSelected) {
+  Util.buildClassificationList = async function (optionSelected) {
   let data = await invModel.getClassifications()
   let options = '<select name="classification_id" id="classification_id" required>'
   options += "<option value = ''>Choose a Classification</option>"

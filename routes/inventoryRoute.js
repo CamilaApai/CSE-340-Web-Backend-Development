@@ -1,6 +1,6 @@
 // Needed Resources 
 const express = require("express")
-const router = new express.Router() 
+const router = new express.Router()
 const invController = require("../controllers/invController")
 const utilities = require("../utilities")
 const validate = require('../utilities/inventory-validation')
@@ -20,22 +20,35 @@ router.get("/add-classification", utilities.handleErrors(invController.buildAddC
 // Route to build add inventory detail view, Unit 4 Individual Activity
 router.get("/add-inventory", utilities.handleErrors(invController.buildAddInventory));
 
+// Route to get inventory for AJAXroute. Week 5, AJAX Select Inventory Activity
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+
+// Route to edit the inventory form. Week 5, Update Inventory item (Step 1) 
+router.get("/edit/:inv_id", utilities.handleErrors(invController.editInventoryView));
+//router.get("/edit/:invId", utilities.handleErrors(invController.editInventoryView));
 
 // Process the Add Classification data, Unit 4 Individual Activity
 router.post(
-    "/add-classification",
-    validate.classificationRules(),
-    validate.checkClassificationData,
-    utilities.handleErrors(invController.addClassification)
-  )
-  
+  "/add-classification",
+  validate.classificationRules(),
+  validate.checkClassificationData,
+  utilities.handleErrors(invController.addClassification)
+)
 
-//// Process the Add Inventory data, Unit 4 Individual Activity
-  router.post(
-    "/add-inventory",
-    validate.inventoryRules(),
-    validate.checkInventoryData,
-    utilities.handleErrors(invController.addInventory)
-  )
+
+// Process the Add Inventory data, Unit 4 Individual Activity
+router.post(
+  "/add-inventory",
+  validate.inventoryRules(),
+  validate.checkInventoryData,
+  utilities.handleErrors(invController.addInventory)
+)
+
+// Route to update the inventory form. Week 5, Update Inventory item (Step 2) 
+ router.post(
+   "/update/",
+   validate.newInventoryRules(),
+   validate.checkUpdateData,
+   utilities.handleErrors(invController.updateInventory))
 
 module.exports = router;

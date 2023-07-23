@@ -1,4 +1,4 @@
-<!-- Week 4, Individual Activity -->
+<!-- Week 5, Update Inventory item (Step 1) -->
 
 <!-- Display the Content Heading -->
 <% if (title) { %>
@@ -20,13 +20,13 @@
 <% } %>
 
 <!-- Display the Content Body -->
-<form action="/inv/add-inventory" method="post">
+<form action="/inv/update" method="post" id="updateForm">
   <div class="form">
     <fieldset>
       <legend>All FIELDS ARE REQUIRED.</legend>
       <div>
         <label for="classification_id">Classification</label>
-        <%- options %>
+        <%- classificationSelect %>
       </div>
       <div>
         <label for="inv_make">Make</label>
@@ -40,7 +40,7 @@
         <label for="inv_description">Description</label> 
       </div>
      <div>
-        <textarea name="inv_description" id="inv_description" cols="30" rows="5" required><%= locals.inv_description %></textarea>
+      <textarea name="inv_description" id="inv_description" cols="30" rows="5" required><%= locals.inv_description %></textarea>
       </div>
       <div>
         <label for="inv_image">Image Path</label>
@@ -67,9 +67,12 @@
         <input type="text" name="inv_color" id="inv_color" required value="<%= locals.inv_color %>">
       </div>
       <div>
-        <input type="submit" class="submit" name="submit" id="submit" value="Add Vehicle">
-      </div>
+        <input type="submit" class="submit" name="submit"  id="submit" value="Update Vehicle">
+        <!-- Week 5, Update Inventory item (Step 2) -->
+       <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%= locals.inv_id %>" <% } %>> 
+    </div>
     </fieldset>
   </div>
-</form>
+</form> 
+<script src="../../js/inv-update.js"></script>
 
