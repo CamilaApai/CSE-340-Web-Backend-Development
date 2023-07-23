@@ -25,7 +25,9 @@ router.get("/getInventory/:classification_id", utilities.handleErrors(invControl
 
 // Route to edit the inventory form. Week 5, Update Inventory item (Step 1) 
 router.get("/edit/:inv_id", utilities.handleErrors(invController.editInventoryView));
-//router.get("/edit/:invId", utilities.handleErrors(invController.editInventoryView));
+ 
+// Route to delete the inventory form. Week 5, Team Activity
+router.get("/delete/:inv_id", utilities.handleErrors(invController.deleteInventoryView));
 
 // Process the Add Classification data, Unit 4 Individual Activity
 router.post(
@@ -50,5 +52,10 @@ router.post(
    validate.newInventoryRules(),
    validate.checkUpdateData,
    utilities.handleErrors(invController.updateInventory))
+
+// Route to delete the inventory form. Week 5, Update Inventory item (Step 2) 
+router.post(
+  "/delete/",
+  utilities.handleErrors(invController.deleteInventory));
 
 module.exports = router;

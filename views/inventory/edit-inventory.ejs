@@ -67,7 +67,7 @@
         <input type="text" name="inv_color" id="inv_color" required value="<%= locals.inv_color %>">
       </div>
       <div>
-        <input type="submit" class="submit" name="submit"  id="submit" value="Update Vehicle">
+        <input disabled type="submit" class="submit" name="submit"  id="submit" value="Update Vehicle" disabled>
         <!-- Week 5, Update Inventory item (Step 2) -->
        <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%= locals.inv_id %>" <% } %>> 
     </div>
