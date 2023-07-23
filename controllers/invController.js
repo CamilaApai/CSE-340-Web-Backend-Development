@@ -53,7 +53,7 @@ invCont.buildManagement = async function (req, res, next) {
 
 /* ***************************
  *  Build Add New Classification View
- *  Unit 4, Individual Activity
+ *  Unit 4, Individual Activitye
  * ************************** */
 invCont.buildAddClassification = async function (req, res, next) {
   let nav = await utilities.getNav()
@@ -167,21 +167,6 @@ invCont.getInventoryJSON = async (req, res, next) => {
   } else {
     next(new Error("No data returned"))
   }
-}
-
-///* ***************************
-// *  Build Add New Inventory View
-// *  Unit 4, Individual Activity
-// * ************************** */
-invCont.buildAddInventory = async function (req, res, next) {
-  let nav = await utilities.getNav()
-  let options =  await utilities.buildClassificationList()
-  res.render("./inventory/add-inventory", {
-    title: "Add New inventory",
-    nav,
-    options,
-    errors: null,
-  })
 }
 
 /* ***************************
