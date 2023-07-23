@@ -11,6 +11,11 @@ router.get("/login", utilities.handleErrors(accountController.buildLogin));
 // Deliver register View
 router.get("/register", utilities.handleErrors(accountController.buildRegister));
 
+// Process the logout request, Week 5
+router.get("/logout", utilities.handleErrors(accountController.accountLogout));
+
+
+
 // Process the registration data, Unit 4 server-side activity
 router.post(
   "/register",
@@ -34,6 +39,39 @@ router.post(
 // Deliver Account Management View
 // Week 5, Individual Activity done in Group
 router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildAccountManagement));
+
+
+
+
+// Deliver Account Update View, Week 5
+router.get("/update/:account_id", utilities.handleErrors(accountController.buildAccountUpdateView));
+
+
+/* **********************
+ *  Process update account information request 
+    Unit 6
+// * ********************* */
+//router.post(
+//  "/update", 
+//  validator.updateRules(),
+//  validator.checkUpdateAccount,
+//  utilities.handleErrors(accountController.updateAccount)
+//  )
+//
+///* **********************
+// *  Process the password update request 
+//    Unit 6
+//// * ********************* */
+//router.post(
+//    "/update-password/", 
+//    validator.passwordRules(),
+//    utilities.handleErrors(accountController.updatePassword)
+//    )
+
+
+
+
+
 
 module.exports = router
   
